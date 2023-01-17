@@ -1,0 +1,20 @@
+C  <ItemGroup>
+    <Folder Include="Contextos\Enderecos\Entities\" />
+    <Folder Include="Contextos\Enderecos\Repositories\" />
+    <Folder Include="Contextos\Enderecos\Resources\" />
+    <Folder Include="Contextos\Usuarios\Entities\" />
+    <Folder Include="Contextos\Usuarios\Repositories\" />
+    <Folder Include="Contextos\Usuarios\Resources\" />
+    <Folder Include="Contextos\Produtos\Entities\" />
+    <Folder Include="Contextos\Produtos\Repositories\" />
+    <Folder Include="Contextos\Produtos\Resources\" />
+    <Folder Include="Contextos\Categorias\Repositories\" />
+    <Folder Include="Contextos\Categorias\Resources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ProjetoTransicao.Shared\ProjetoTransicao.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
+Ontext
