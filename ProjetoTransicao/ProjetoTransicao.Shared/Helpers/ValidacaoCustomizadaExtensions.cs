@@ -1,6 +1,4 @@
-﻿
-using System.Text;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 
 namespace ProjetoTransicao.Shared.Helpers;
 
@@ -52,21 +50,5 @@ public static class ValidacaoCustomizadaExtensions
         cep = cep.Insert(5, "-");
 
         return Regex.IsMatch(cep, ("[0-9]{5}-[0-9]{3}"));
-    }
-
-    public static string EncriptarSenha(this string senha)
-    {
-        if (string.IsNullOrEmpty(senha)) return "";
-
-        senha += SharedExtensions.SEGREDO_SENHA;
-        var novaSenha = senha;
-        var md5 = System.Security.Cryptography.MD5.Create();
-        var dataHash = md5.ComputeHash(Encoding.Default.GetBytes(novaSenha));
-        var senhaEncriptada = new StringBuilder();
-
-        foreach (var data in dataHash)
-            senhaEncriptada.Append(data.ToString("x2"));
-
-        return senhaEncriptada.ToString();
     }
 }
