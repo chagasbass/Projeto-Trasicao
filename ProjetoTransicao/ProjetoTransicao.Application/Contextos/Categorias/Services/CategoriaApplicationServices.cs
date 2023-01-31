@@ -3,6 +3,7 @@ using ProjetoTransicao.Application.Contextos.Categorias.Contracts;
 using ProjetoTransicao.Application.Contextos.Categorias.Dtos;
 using ProjetoTransicao.Domain.Contextos.Categorias.Entities;
 using ProjetoTransicao.Domain.Contextos.Categorias.Repositories;
+using ProjetoTransicao.Extensions.Logs.Services;
 using ProjetoTransicao.Shared.Entities;
 using ProjetoTransicao.Shared.Enums;
 using ProjetoTransicao.Shared.Notifications;
@@ -11,15 +12,17 @@ namespace ProjetoTransicao.Application.Contextos.Categorias.Services;
 
 public class CategoriaApplicationServices : ICategoriaApplicationServices
 {
-    //private readonly ILogServices _logServices;
+    private readonly ILogServices _logServices;
     private readonly INotificationServices _notificationServices;
     private readonly ICategoriaWriteRepository _categoriaWriteRepository;
     private readonly ICategoriaReadRepository _categoriaReadRepository;
 
-    public CategoriaApplicationServices(INotificationServices notificationServices,
+    public CategoriaApplicationServices(ILogServices logServices,
+                                        INotificationServices notificationServices,
                                         ICategoriaWriteRepository categoriaWriteRepository,
                                         ICategoriaReadRepository categoriaReadRepository)
     {
+        _logServices = logServices;
         _notificationServices = notificationServices;
         _categoriaWriteRepository = categoriaWriteRepository;
         _categoriaReadRepository = categoriaReadRepository;
@@ -116,6 +119,13 @@ public class CategoriaApplicationServices : ICategoriaApplicationServices
     public async Task<ICommandResult> SalvarCategoriasAsync(SalvarCategoriaDto salvarCategoriaDto)
     {
         Categoria novaCategoria = salvarCategoriaDto;
+
+        /*Recebe contrato
+         *se contrato invalido , retorna notificao e status code 422
+         *faz listagem de categoria
+         *se categoria existe, retorna notificacao
+         *salva categoria 
+         */
 
         if (!novaCategoria.IsValid)
         {

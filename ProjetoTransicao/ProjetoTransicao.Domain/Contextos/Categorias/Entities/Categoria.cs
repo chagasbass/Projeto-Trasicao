@@ -1,6 +1,6 @@
 ﻿using Flunt.Notifications;
 using Flunt.Validations;
-using ProjetoTransicao.Domain.Contextos.Categorias.Recursos;
+using ProjetoTransicao.Domain.Contextos.Categorias.Resources;
 using ProjetoTransicao.Extensions.Entities;
 
 namespace ProjetoTransicao.Domain.Contextos.Categorias.Entities;

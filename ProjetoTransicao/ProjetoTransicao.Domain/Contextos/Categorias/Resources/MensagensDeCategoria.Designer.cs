@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjetoTransicao.Domain.Contextos.Categorias.Recursos {
+namespace ProjetoTransicao.Domain.Contextos.Categorias.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ProjetoTransicao.Domain.Contextos.Categorias.Recursos {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ProjetoTransicao.Domain.Contextos.Categorias.Recursos.MensagensDeCategoria", typeof(MensagensDeCategoria).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ProjetoTransicao.Domain.Contextos.Categorias.Resources.MensagensDeCategoria", typeof(MensagensDeCategoria).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -48,7 +48,7 @@ namespace ProjetoTransicao.Domain.Contextos.Categorias.Recursos {
         
         /// <summary>
         ///   Substitui a propriedade CurrentUICulture do thread atual para todas as
-        ///   pesquisas de recursos que usam essa classe de recurso de tipo de alta segurança.
+        ///   pesquisas de Resources que usam essa classe de recurso de tipo de alta segurança.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         internal static global::System.Globalization.CultureInfo Culture {
