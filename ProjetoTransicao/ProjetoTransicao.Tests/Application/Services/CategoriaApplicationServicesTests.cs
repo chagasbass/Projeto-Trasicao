@@ -1,5 +1,6 @@
 ﻿using AutoFixture;
 using Moq;
+using ProjetoTransicao.Application.Contextos.Categorias.Dtos;
 using ProjetoTransicao.Application.Contextos.Categorias.Services;
 using ProjetoTransicao.Domain.Contextos.Categorias.Entities;
 using ProjetoTransicao.Domain.Contextos.Categorias.Repositories;
@@ -115,4 +116,40 @@ public class CategoriaApplicationServicesTests
         Assert.NotNull(commandResult.Data);
         Assert.True(commandResult.Success);
     }
+
+    [Fact]
+    [Trait("CategoriaApplicationServices", "Atualizar categoria - inexistência de dados")]
+    public async Task Deve_Retornar_Notificação_E_StatusCode_400_Quando_Categoria_Não_Existir()
+    {
+        //Arrange
+        var atualizarCategoriaDto = _atualizarCategoriaDtoFake.GerarEntidadeValida();
+        var statusCode = StatusCodeOperation.BadRequest;
+
+        _notificationServices.Setup(x => x.HasNotifications()).Returns(true);
+        _notificationServices.Setup(x => x.StatusCode).Returns(statusCode);
+        _categoriaReadRepository.Setup(x => x.ListarCategoriasAsync(atualizarCategoriaDto.Id)).Returns(Task.FromResult<Categoria>(null));
+
+        //Act
+        var service = new CategoriaApplicationServices(_logServices.Object,
+                                                       _notificationServices.Object,
+                                                       _categoriaWriteRepository.Object,
+                                                       _categoriaReadRepository.Object);
+
+        var commandResult = (CommandResult)await service.AtualizarCategoriasAsync(atualizarCategoriaDto);
+
+        //Assert
+        Assert.True(_notificationServices.Object.HasNotifications());
+        Assert.Equal(statusCode, _notificationServices.Object.StatusCode);
+        Assert.False(commandResult.Success);
+
+
+
+        //var categoriaExistente = _categoriaReadRepository.Setup(x => x.ListarCategoriasAsync(atualizarCategoriaDto.Id)).Returns(Task.FromResult<Categoria>(null));
+
+
+        ////Categoria categoria = salvarCategoriaDto;
+        ////categoria.Id = ;
+        //Assert.True(true);
+    }
+
 }

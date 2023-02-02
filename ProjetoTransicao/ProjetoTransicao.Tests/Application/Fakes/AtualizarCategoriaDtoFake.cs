@@ -30,8 +30,10 @@ public class AtualizarCategoriaDtoFake : IFake<AtualizarCategoriaDto>
         var dto = _fixture.Build<AtualizarCategoriaDto>()
                           .Without(x => x.Descricao)
                           .Without(x => x.Nome)
+                          .Without(x => x.Id)
                           .Do(x =>
                           {
+                              x.Id = new Guid("16abb069-e668-456c-be4b-9d05ab97d9ef");
                               x.Nome = "Nova Categoria";
                               x.Descricao = "Nova Descrição";
                           })
