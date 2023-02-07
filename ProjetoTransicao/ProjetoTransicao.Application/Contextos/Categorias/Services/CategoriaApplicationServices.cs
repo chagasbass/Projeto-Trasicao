@@ -1,14 +1,4 @@
-﻿using Flunt.Notifications;
-using ProjetoTransicao.Application.Contextos.Categorias.Contracts;
-using ProjetoTransicao.Application.Contextos.Categorias.Dtos;
-using ProjetoTransicao.Domain.Contextos.Categorias.Entities;
-using ProjetoTransicao.Domain.Contextos.Categorias.Repositories;
-using ProjetoTransicao.Extensions.Logs.Services;
-using ProjetoTransicao.Shared.Entities;
-using ProjetoTransicao.Shared.Enums;
-using ProjetoTransicao.Shared.Notifications;
-
-namespace ProjetoTransicao.Application.Contextos.Categorias.Services;
+﻿namespace ProjetoTransicao.Application.Contextos.Categorias.Services;
 
 public class CategoriaApplicationServices : ICategoriaApplicationServices
 {

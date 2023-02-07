@@ -53,7 +53,6 @@ public class GlobalExceptionHandlerMiddleware : IMiddleware
         };
     }
 
-
     private async Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
         const string dataType = @"application/problem+json";

@@ -62,8 +62,6 @@ namespace ProjetoTransicao.Extensions.Logs.Configurations
             return services;
         }
 
-
-
         public static IServiceCollection AddStructuraLog(this IServiceCollection services)
         {
             services.AddSingleton<ILogServices, LogServices>();

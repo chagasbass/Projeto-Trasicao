@@ -1,6 +1,4 @@
-﻿using ProjetoTransicao.Domain.Contextos.Categorias.Entities;
-
-namespace ProjetoTransicao.Domain.Contextos.Categorias.Repositories;
+﻿namespace ProjetoTransicao.Domain.Contextos.Categorias.Repositories;
 
 public interface ICategoriaWriteRepository
 {

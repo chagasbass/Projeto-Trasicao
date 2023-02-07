@@ -1,35 +1,26 @@
-namespace ProjetoTransicao.API
+using ProjetoTransicao.API;
+using ProjetoTransicao.API.Extensions;
+using ProjetoTransicao.Extensions.Logs.Configurations;
+using Serilog;
+
+var builder = WebApplication.CreateBuilder(args);
+
+var configuration = builder.Configuration;
+
+#region configuring logs
+Log.Logger = LogExtensions.ConfigureStructuralLogWithSerilog(configuration);
+builder.Logging.AddSerilog(Log.Logger);
+#endregion
+try
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
-
-            // Add services to the container.
-
-            builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseAuthorization();
-
-
-            app.MapControllers();
-
-            app.Run();
-        }
-    }
+    Log.Information("Iniciando a aplicação");
+    builder.UseStartup<Startup>();
+}
+catch (Exception ex)
+{
+    Log.Fatal($"Erro fatal na aplicação => {ex.Message}");
+}
+finally
+{
+    Log.CloseAndFlush();
 }

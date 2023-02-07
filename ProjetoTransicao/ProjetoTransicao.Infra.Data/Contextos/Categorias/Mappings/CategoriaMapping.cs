@@ -1,9 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ProjetoTransicao.Domain.Contextos.Categorias.Entities;
-using ProjetoTransicao.Infra.Data.Bases;
-
-namespace ProjetoTransicao.Infra.Data.Contextos.Categorias.Mappings;
+﻿namespace ProjetoTransicao.Infra.Data.Contextos.Categorias.Mappings;
 
 public class CategoriaMapping : BaseMappings<Categoria>
 {

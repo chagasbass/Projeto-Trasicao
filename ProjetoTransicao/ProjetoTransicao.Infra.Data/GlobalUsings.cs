@@ -1,1 +1,16 @@
-﻿
+﻿global using Dapper;
+global using Flunt.Notifications;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Microsoft.Extensions.Options;
+global using ProjetoTransicao.Domain.Contextos.Categorias.Entities;
+global using ProjetoTransicao.Domain.Contextos.Categorias.Repositories;
+global using ProjetoTransicao.Extensions.Entities;
+global using ProjetoTransicao.Infra.Data.Bases;
+global using ProjetoTransicao.Infra.Data.Contextos.Categorias.QueryHelpers;
+global using ProjetoTransicao.Infra.Data.DataContexts;
+global using ProjetoTransicao.Shared.Configurations;
+global using System.Data;
+global using System.Data.SqlClient;
+global using System.Reflection;
+global using System.Text;

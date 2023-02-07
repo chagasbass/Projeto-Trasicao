@@ -1,1 +1,9 @@
-﻿
+﻿global using Flunt.Notifications;
+global using ProjetoTransicao.Application.Contextos.Categorias.Contracts;
+global using ProjetoTransicao.Application.Contextos.Categorias.Dtos;
+global using ProjetoTransicao.Domain.Contextos.Categorias.Entities;
+global using ProjetoTransicao.Domain.Contextos.Categorias.Repositories;
+global using ProjetoTransicao.Extensions.Logs.Services;
+global using ProjetoTransicao.Shared.Entities;
+global using ProjetoTransicao.Shared.Enums;
+global using ProjetoTransicao.Shared.Notifications;

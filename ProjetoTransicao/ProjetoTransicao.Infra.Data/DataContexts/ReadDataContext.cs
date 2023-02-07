@@ -1,9 +1,4 @@
-﻿using Microsoft.Extensions.Options;
-using ProjetoTransicao.Shared.Configurations;
-using System.Data;
-using System.Data.SqlClient;
-
-namespace ProjetoTransicao.Infra.Data.DataContexts;
+﻿namespace ProjetoTransicao.Infra.Data.DataContexts;
 
 public class ReadDataContext : IDisposable
 {

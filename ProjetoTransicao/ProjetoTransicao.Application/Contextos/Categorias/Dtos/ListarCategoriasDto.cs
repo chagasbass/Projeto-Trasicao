@@ -1,6 +1,4 @@
-﻿using ProjetoTransicao.Domain.Contextos.Categorias.Entities;
-
-namespace ProjetoTransicao.Application.Contextos.Categorias.Dtos;
+﻿namespace ProjetoTransicao.Application.Contextos.Categorias.Dtos;
 
 public class ListarCategoriasDto
 {

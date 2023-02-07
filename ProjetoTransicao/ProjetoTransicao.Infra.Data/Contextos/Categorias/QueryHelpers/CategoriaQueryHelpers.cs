@@ -1,5 +1,4 @@
-﻿using System.Text;
-
+﻿
 namespace ProjetoTransicao.Infra.Data.Contextos.Categorias.QueryHelpers;
 
 public static class CategoriaQueryHelpers

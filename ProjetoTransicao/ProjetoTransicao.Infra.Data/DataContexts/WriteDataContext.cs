@@ -1,9 +1,4 @@
-﻿using Flunt.Notifications;
-using Microsoft.EntityFrameworkCore;
-using ProjetoTransicao.Domain.Contextos.Categorias.Entities;
-using System.Reflection;
-
-namespace ProjetoTransicao.Infra.Data.DataContexts;
+﻿namespace ProjetoTransicao.Infra.Data.DataContexts;
 
 public class WriteDataContext : DbContext
 {

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using ProjetoTransicao.Api.Bases;
+using ProjetoTransicao.Extensions.Logs.Configurations;
 using ProjetoTransicao.Extensions.Middlewares;
 
 namespace ProjetoTransicao.API
@@ -16,13 +17,15 @@ namespace ProjetoTransicao.API
         public void Configure(WebApplication app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider)
         {
             app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+            app.UseMiddleware<SerilogRequestLoggerMiddleware>();
         }
 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
             services.AddEndpointsApiExplorer()
-                    .AddGlobalCustomsMiddlewares();
+                    .AddGlobalCustomsMiddlewares()
+                    .AddStructuraLog();
         }
     }
 

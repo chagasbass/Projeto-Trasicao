@@ -1,8 +1,4 @@
-﻿using ProjetoTransicao.Domain.Contextos.Categorias.Entities;
-using ProjetoTransicao.Domain.Contextos.Categorias.Repositories;
-using ProjetoTransicao.Infra.Data.DataContexts;
-
-namespace ProjetoTransicao.Infra.Data.Contextos.Categorias.Repositories;
+﻿namespace ProjetoTransicao.Infra.Data.Contextos.Categorias.Repositories;
 
 public class CategoriaWriteRepository : ICategoriaWriteRepository
 {
